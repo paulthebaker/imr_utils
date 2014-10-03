@@ -2,6 +2,12 @@
 
 Python utilities for computing binary black hole merger paremters including QNMs
 
+Unit conventions:
+ * mass (_M_,_m_) - solar mass
+ * spin (_a_) - dimensionless (ang. mom. per _M_<sup>2</sup>)
+ * real frequency (_f_) - hz
+ * dimensionless frequency (_F_) - dimensionless...
+ * quality factor (_Q_)- dimensionless
 
 ## sub modules
 
@@ -12,7 +18,7 @@ inspiral.py
 ringdown.py
  * compute black hole ringdown QNM frequency and quality factor
  * handles all _l_=2,3,4 modes for all _m_=[-_l_,+_l_], _n_=1 only
- * compute real or dimensionless frequency from mass and spin
+ * compute real (hz) or dimensionless frequency from mass and spin
  * compute BH mass and spin from frequency and quality
  
 
