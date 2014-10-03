@@ -11,7 +11,7 @@ inspiral.py
 
 ringdown.py
  * compute black hole ringdown QNM frequency and quality factor
- * handles all n=1, l=2,3,4 modes (m=[-l,+l])
+ * handles all _l_=2,3,4 modes for all _m_=[-_l_,+_l_], _n_=1 only
  * compute real or dimensionless frequency from mass and spin
  * compute BH mass and spin from frequency and quality
  
