@@ -175,7 +175,8 @@ def f_from_Ma(M, a, l=2, m=2):
     return f
 
 def fQ_from_Ma(M, a, l=2, m=2):
-    """return ringdown freq and quality l=m=2 given BH mass and spin"""
+    """return ringdown freq and quality for mode l,m given BH mass and spin
+    """
     F, Q = FQ_from_a(a, l, m)
     f = F / (__Tsun*M) / (2.0*np.pi)
     return (f, Q)
@@ -199,7 +200,8 @@ def Ma_from_fQ(f, Q, l=2, m=2):
     return (M, a)
 
 def M_from_fQ(f, Q, l=2, m=2):
-    """return BH mass given ringdown quality and freq l=m=2"""
+    """return BH mass given ringdown quality and freq for mode l,m
+    """
     a = a_from_Q(Q, l, m)
     F = F_from_a(a, l, m)
     M = F / (2.0*np.pi*f) / __Tsun
