@@ -1,7 +1,9 @@
-imr_utils
-=========
+# imr_utils
 
-Utilities for computing binary black hole merger paremters including QNMs
+Python utilities for computing binary black hole merger paremters including QNMs
+
+
+## sub modules
 
 inspiral.py
  * convert between component masses, total mass and mass ratio (or symmetric mass ratio)
@@ -13,5 +15,6 @@ ringdown.py
  * compute real or dimensionless frequency from mass and spin
  * compute BH mass and spin from frequency and quality
  
- QNM calculations based on approximation of Berti et al. (2008) 
- http://arxiv.org/abs/gr-qc/0512160
+
+QNM calculations based on approximation of [Berti et al. (2008)](http://arxiv.org/abs/gr-qc/0512160)
+
