@@ -10,9 +10,9 @@ import numpy as np
 ##################
 # Constants used 
 ##################
-c = 299792458.0 # m/s
-GMsun = 1.32712440018e+20 # m^3/s^2
-Tsun = GMsun/(c*c*c) # "sec per solar mass"
+__C = 299792458.0 # speed of light (m/s)
+__GMsun = 1.32712440018e+20 # (Newton's G)*(mass of sun) (m^3/s^2)
+__Tsun = __GMsun/(__C*__C*__C) # "sec per solar mass"
 
 #######################
 # fit coefficients for QNMs f
@@ -25,7 +25,7 @@ Tsun = GMsun/(c*c*c) # "sec per solar mass"
 #  Q = q0 + q1 * (1-a)^q2
 #######################
 
-qnm_fs = np.array([
+_qnm_fs = np.array([
     [
         [None, None, None], # BLANK DATA
         [None, None, None], # BLANK DATA
@@ -62,7 +62,7 @@ qnm_fs = np.array([
 ])
 
 
-qnm_qs = np.array([
+_qnm_qs = np.array([
     [
         [None, None, None], # BLANK DATA
         [None, None, None], # BLANK DATA
@@ -103,7 +103,7 @@ def f_lm(l, m):
     l=2,3,4 and -l <= m <= l
     """
     try:
-        f = qnm_fs[l-2][4-m]
+        f = _qnm_fs[l-2][4-m]
         if f[0]==None:
             raise ValueError
     except IndexError:
@@ -118,7 +118,7 @@ def q_lm(l, m):
     l=2,3,4 and -l <= m <= l
     """
     try:
-        q = qnm_qs[l-2][4-m]
+        q = _qnm_qs[l-2][4-m]
         if q[0]==None:
             raise ValueError
     except IndexError:
@@ -171,13 +171,13 @@ def f_from_Ma(M, a, l=2, m=2):
     for mode l,m; currently only l=2,3,4
     """
     F = F_from_a(a, l, m)
-    f = F / (Tsun*M) / (2.0*np.pi)
+    f = F / (__Tsun*M) / (2.0*np.pi)
     return f
 
 def fQ_from_Ma(M, a, l=2, m=2):
     """return ringdown freq and quality l=m=2 given BH mass and spin"""
     F, Q = FQ_from_a(a, l, m)
-    f = F / (Tsun*M) / (2.0*np.pi)
+    f = F / (__Tsun*M) / (2.0*np.pi)
     return (f, Q)
 
 
@@ -195,14 +195,14 @@ def Ma_from_fQ(f, Q, l=2, m=2):
     """
     a = a_from_Q(Q)
     F = F_from_a(a, l, m)
-    M = F / (2.0*np.pi*f) / Tsun
+    M = F / (2.0*np.pi*f) / __Tsun
     return (M, a)
 
 def M_from_fQ(f, Q, l=2, m=2):
     """return BH mass given ringdown quality and freq l=m=2"""
     a = a_from_Q(Q, l, m)
     F = F_from_a(a, l, m)
-    M = F / (2.0*np.pi*f) / Tsun
+    M = F / (2.0*np.pi*f) / __Tsun
     return M
 
 
