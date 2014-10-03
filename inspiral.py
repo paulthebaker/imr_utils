@@ -49,7 +49,7 @@ def eta_from_Mq(M, q):
 #  eta - initial symmetric mass ratio
 #  m1 - initial component mass 1
 #  m2 - initial component mass 2
-#  Mi - initial system total mass
+#  M - initial system total mass
 #  q - initial mass ratio
 #  e - fractional energy radiated
 ###########################
@@ -69,19 +69,19 @@ def a_from_m1m2(m1, m2):
     return a_from_eta(eta)
 
 
-def a_from_Miq(Mi, q): 
+def a_from_Mq(M, q): 
     """return BH spin given initial Mtot and mass ratio
     only good for initially non-spinning BBH
     """
-    eta = eta_from_Mq(Mi, q)
+    eta = eta_from_Mq(M, q)
     return a_from_eta(eta)
 
 
-def Mf_from_etaMi(eta, Mi):
+def Mf_from_etaM(eta, M):
     """return final BH mass given initial Mtot and symmetric mass ratio
     only good for initially non-spinning BBH
     """
-    return ( 1 + (np.sqrt(8.0/9.0) - 1)*eta - 0.498*eta*eta) * Mi
+    return ( 1 + (np.sqrt(8.0/9.0) - 1)*eta - 0.498*eta*eta) * M
 
 
 def Mf_from_m1m2(m1, m2): 
@@ -89,15 +89,15 @@ def Mf_from_m1m2(m1, m2):
     only good for initially non-spinning BBH
     """
     eta = eta_from_m1m2(m1, m2)
-    Mi = m1 + m2
-    return Mf_from_etaMi(eta, Mi)
+    M = m1 + m2
+    return Mf_from_etaM(eta, M)
 
 
-def Mf_from_Miq(Mi, q): 
+def Mf_from_Mq(M, q): 
     """return final BH mass given initial Mtot and mass ratio
     only good for initially non-spinning BBH
     """
-    eta = eta_from_Mq(Mi, q)
-    return Mf_from_etaMi(eta, Mi)
+    eta = eta_from_Mq(M, q)
+    return Mf_from_etaM(eta, M)
 
 
