@@ -1,4 +1,4 @@
-# imr_lib.py
+# imr_utils
 # pythonic implementations of some BH inspiral-merger-ringdown 
 #  computation tools 
 #  

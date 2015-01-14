@@ -1,4 +1,4 @@
-# ringutils.py
+# ringdown.py
 # pythonic implementations of some BH ringdown computation tools
 #  masses in Msun, freq in Hz, spins and qualities dimensionless
 #
