@@ -4,7 +4,7 @@
 #  
 # masses in Msun, freq in Hz, spins and qualities dimensionless
 #
-# (c) 2014 Paul T. Baker, bakerp@geneseo.edu
+# (c) 2016 Paul T. Baker, paul.baker@ligo.org
 # licence: GNU GPLv3 <http://www.gnu.org/licenses/gpl.txt>
 
 __all__ = ["inspiral", "ringdown"]
