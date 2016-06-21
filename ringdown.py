@@ -2,7 +2,7 @@
 # pythonic implementations of some BH ringdown computation tools
 #  masses in Msun, freq in Hz, spins and qualities dimensionless
 #
-# (c) 2014 Paul T. Baker, paul.baker@ligo.org
+# (c) 2016 Paul T. Baker, paul.baker@ligo.org
 # licence: GNU GPLv3 <http://www.gnu.org/licenses/gpl.txt>
 
 import numpy as np
@@ -17,7 +17,7 @@ __Tsun = __GMsun/(__C*__C*__C) # "sec per solar mass"
 #######################
 # fit coefficients for QNMs f
 #  for l=2,3,4 and m=-l,...,l
-#   From Berti et al. (2008)
+#   From Berti et al. (2005): /gr-qc/0512160
 #    <5% error in a=[0,0.99] 
 #    note: Berti calls them 1-3 instead of 0-2
 #

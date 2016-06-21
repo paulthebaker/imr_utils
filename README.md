@@ -22,5 +22,6 @@ ringdown.py
  * compute BH mass and spin from frequency and quality
  
 
-QNM calculations based on approximation of [Berti et al. (2008)](http://arxiv.org/abs/gr-qc/0512160)
+QNM calculations based on approximation of [Berti et al. (2005)](http://arxiv.org/abs/gr-qc/0512160)
 
+The _l_=_m_=2 functionality is implemented in [pycbc](https://github.com/ligo-cbc/pycbc), the other modes are not.
